@@ -1,7 +1,7 @@
 {
   "name": "video-stream",
   "version": "1.0.0",
-  "description": "Video stream middleware for express/Node.js.",
+  "description": "Video stream middleware for express/Node.js",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
