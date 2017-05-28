@@ -4,7 +4,8 @@
   "description": "Video stream middleware for express/Node.js",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "download-example-movie": "wget -O example/movie.mp4 http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/caiogondim/express-video-streamer/issues"
   },
-  "homepage": "https://github.com/caiogondim/express-video-streamer#readme"
+  "homepage": "https://github.com/caiogondim/express-video-streamer#readme",
+  "devDependencies": {
+    "express": "^4.15.3"
+  }
 }
