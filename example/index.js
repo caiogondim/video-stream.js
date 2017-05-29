@@ -1,36 +1,19 @@
+// Run `npm run download-example-movie` to, well, get an example movie to make this test work.
+
 const fs = require(`fs`)
 const path = require(`path`)
 const express = require(`express`)
+const videoStream = require('../src')
 
 const app = express()
+
+app.get('/video/:filename', videoStream({ dir: path.resolve(__dirname) }))
 
 app.get(`/`, (req, res) => {
   console.log(`Hit`)
 
-  const filePath = path.resolve(`${__dirname}/movie.mp4`)
-  const fileStat = fs.statSync(filePath)
-
-  if(req.headers[`range`]) {
-    const { range } = req.headers
-    const parts = range.replace(/bytes=/, ``).split(`-`)
-    const start = parseInt(parts[0], 10)
-    const end = parts[1] ? parseInt(parts[1], 10) : fileStat.size - 1
-    const chunkSize = (end - start) + 1
-
-    res.writeHead(206, {
-      'Content-Range': `bytes ${start}-${end}/${fileStat.size}`,
-      'Accept-Ranges': `bytes`,
-      'Content-Length': chunkSize,
-      'Content-Type': `video/mp4`
-    })
-    fs.createReadStream(filePath, { start, end }).pipe(res)
-  } else {
-    res.writeHead(200, {
-      'Content-Length': fileStat.size,
-      'Content-Type': 'video/mp4'
-    })
-    fs.createReadStream(filePath).pipe(res)
-  }
+  res.send('Hello World')
+  res.end()
 })
 
 app.listen(3000, () => {
