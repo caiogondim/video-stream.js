@@ -1,12 +1,12 @@
 const fs = require(`fs`)
 const path = require(`path`)
 
-function factory(opts) {
+function factory (opts) {
   if (!opts.dir) throw new Error('`opts.dir` is required')
 
   const dir = opts.dir
 
-  return function main(req, res, next) {
+  return function main (req, res, next) {
     const { filename } = req.params
 
     // if (!fileExist()) return next()
@@ -14,7 +14,7 @@ function factory(opts) {
     const filePath = path.resolve(`${dir}/${filename}`)
     const fileStat = fs.statSync(filePath)
 
-    if(req.headers[`range`]) {
+    if (req.headers[`range`]) {
       const { range } = req.headers
       const parts = range.replace(/bytes=/, ``).split(`-`)
       const start = parseInt(parts[0], 10)

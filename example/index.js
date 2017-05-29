@@ -1,6 +1,5 @@
 // Run `npm run download-example-movie` to, well, get an example movie to make this test work.
 
-const fs = require(`fs`)
 const path = require(`path`)
 const express = require(`express`)
 const videoStream = require('../src')
@@ -10,8 +9,6 @@ const app = express()
 app.get('/video/:filename', videoStream({ dir: path.resolve(__dirname) }))
 
 app.get(`/`, (req, res) => {
-  console.log(`Hit`)
-
   res.send('Hello World')
   res.end()
 })
