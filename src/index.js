@@ -1,12 +1,17 @@
 const fs = require(`fs`)
 const path = require(`path`)
+const util = require(`util`)
+const logger = require(`logdown`)(`video-stream`, { markdown: false })
 
 function factory (opts) {
   if (!opts.dir) throw new Error('`opts.dir` is required')
 
+  logger.log('`factory.opts`: ' + util.inspect(opts, { colors: true }))
   const dir = opts.dir
 
   return function main (req, res, next) {
+    logger.log('`request.headers`: ' + util.inspect(req.headers, { colors: true }))
+
     const { filename } = req.params
 
     // if (!fileExist()) return next()

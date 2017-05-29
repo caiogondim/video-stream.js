@@ -21,5 +21,8 @@
   "devDependencies": {
     "express": "^4.15.3",
     "standard": "^10.0.2"
+  },
+  "dependencies": {
+    "logdown": "^2.2.0"
   }
 }
