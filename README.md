@@ -37,7 +37,7 @@ app.listen(3000, () => {
 })
 ```
 
-Check a working example on example folder.
+Check a working example on [example folder](https://github.com/caiogondim/video-stream.js/tree/master/example).
 
 ---
 
