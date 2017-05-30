@@ -20,6 +20,8 @@
   "homepage": "https://github.com/caiogondim/express-video-streamer#readme",
   "devDependencies": {
     "express": "^4.15.3",
+    "mz": "^2.6.0",
+    "request-promise": "^4.2.1",
     "standard": "^10.0.2"
   },
   "dependencies": {
