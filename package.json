@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caiogondim/express-video-streamer.git"
+    "url": "git+https://github.com/caiogondim/video-streamer.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/caiogondim/express-video-streamer/issues"
+    "url": "https://github.com/caiogondim/video-streamer/issues"
   },
-  "homepage": "https://github.com/caiogondim/express-video-streamer#readme",
+  "homepage": "https://github.com/caiogondim/video-streamer#readme",
   "devDependencies": {
     "express": "^4.15.3",
     "mz": "^2.6.0",
