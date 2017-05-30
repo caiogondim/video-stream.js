@@ -2,12 +2,45 @@
 
 <h1 align="center">video-stream.js</h1>
 
-<div align="center">
-  <img src="http://travis-ci.org/caiogondim/fast-memoize.js.svg?branch=master" alt="Travis CI"> <img src="https://codecov.io/gh/caiogondim/fast-memoize.js/branch/master/graph/badge.svg" alt="Code coverage">
-</div>
-
 <br>
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos veritatis quisquam unde,
-nesciunt aperiam minima aliquam nihil inventore nostrum tempore recusandae perspiciatis illum
-distinctio hic, provident aspernatur officiis, porro a.
+Express middleware for streaming video.
+
+## Installation
+
+```
+npm install -S video-stream
+```
+
+## Usage
+
+Call `videoStream` middleware passing the directory that we should look for videos.
+
+```js
+const path = require('path')
+const express = require('express')
+const videoStream = require('video-stream')
+
+const app = express()
+
+// video-stream route
+app.get('/video/:filename', videoStream({ dir: path.resolve(__dirname) }))
+
+// Your normal routes
+app.get('/', (req, res) => {
+  res.send('Hello World')
+  res.end()
+})
+
+app.listen(3000, () => {
+  console.log(`Listening on port 3000`)
+})
+```
+
+Check a working example on example folder.
+
+---
+
+[caiogondim.com](https://caiogondim.com) &nbsp;&middot;&nbsp;
+GitHub [@caiogondim](https://github.com/caiogondim) &nbsp;&middot;&nbsp;
+Twitter [@caio_gondim](https://twitter.com/caio_gondim)
