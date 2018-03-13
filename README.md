@@ -1,6 +1,6 @@
 <img src="https://cdn.rawgit.com/caiogondim/video-stream.js/master/img/banner.svg" width="100%" />
 
-<h1 align="center">video-stream.js</h1>
+# video-stream
 
 <br>
 
